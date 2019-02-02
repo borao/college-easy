@@ -46,8 +46,20 @@ def add_college():
         except Exception as e:
             return str(e)
     else:
-        return render_template("add_college.html")
+        return render_template("college.html")
 
+
+@app.route('/edit_college', methods=['GET', 'POST'])
+def edit_college():
+    if request.method == "POST":
+        pass
+    else:
+        try:
+            college = College.query.filter_by(name="Texas A&M University").one()
+            is_editing = True
+            return render_template("college.html", college=college, is_editing=is_editing)
+        except Exception as e:
+            return str(e)
 
 if __name__ == '__main__':
     app.run()

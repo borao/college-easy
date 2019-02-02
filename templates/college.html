@@ -12,10 +12,14 @@
 <body>
 <form action="/add_college" method="POST">
 <div class="container">
+    {% if not is_editing %}
   <h2>Enter college information</h2>
+    {% else %}
+  <h2>Edit college information</h2>
+    {% endif %}
     <div class="form-group">
       <label for="name">College Name:</label>
-      <input type="text" class="form-control" id="name" placeholder="Enter college name" name="name">
+      <input type="text" class="form-control" id="name" placeholder="{% if is_editing %}{{ college.name }}{% else %}Enter college name{% endif %}" name="name">
     </div>
 
     <div class="form-group">
