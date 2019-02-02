@@ -23,13 +23,13 @@ def index():
 @app.route('/add_college', methods=['GET', 'POST'])
 def add_college():
     if request.method == "POST":
-        name = request.args.get('name')
-        app_deadline = request.args.get('app_deadline')
-        rec_deadline = request.args.get('rec_deadline')
-        num_essays = request.args.get('num_essays')
-        midyear_report = request.args.get('midyear_report')
-        acceptance_rate = request.args.get('acceptance_rate')
-        platform = request.args.get('platform')
+        name = request.form.get('name')
+        app_deadline = request.form.get('app_deadline')
+        rec_deadline = request.form.get('rec_deadline')
+        num_essays = request.form.get('num_essays')
+        midyear_report = request.form.get('midyear_report')
+        acceptance_rate = request.form.get('acceptance_rate')
+        platform = request.form.get('platform')
         try:
             college = College(
                 name=name,
