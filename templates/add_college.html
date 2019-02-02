@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+<form action="/add_college" method="POST">
+<div class="container">
+  <h2>Enter college information</h2>
+    <div class="form-group">
+      <label for="name">College Name:</label>
+      <input type="text" class="form-control" id="name" placeholder="Enter college name" name="name">
+    </div>
+
+    <div class="form-group">
+      <label for="app_deadline">Application Deadline Date</label>
+      <input type="text" class="form-control" id="app_deadline" placeholder="MM/DD/YYYY" name="app_deadline">
+    </div>
+
+    <div class="form-group">
+      <label for="rec_deadline">Recommendation Letter Deadline Date</label>
+      <input type="text" class="form-control" id="rec_deadline" placeholder="MM/DD/YYYY" name="rec_deadline">
+    </div>
+
+    <div class="form-group">
+      <label for="num_essays">Number of Supplemental Essays</label>
+      <input type="text" class="form-control" id="num_essays" placeholder="Number of Essays" name="num_essays">
+    </div>
+
+    <div class="form-group">
+      <label for="midyear_report">Midyear Report Deadline Date</label>
+      <input type="text" class="form-control" id="midyear_report" placeholder="MM/DD/YYYY" name="midyear_report">
+    </div>
+
+    <div class="form-group">
+      <label for="acceptance_rate">Acceptance Rate</label>
+      <input type="text" class="form-control" id="acceptance_rate" placeholder="MM/DD/YYYY" name="acceptance_rate">
+    </div>
+
+    <div class="form-group">
+      <label for="rec_deadline">Application Platform</label>
+      <input type="text" class="form-control" id="platform" placeholder="Enter application portal name" name="platform">
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+
+</form>
+</div>
+
+</body>
+</html>
