@@ -1,5 +1,5 @@
 import os
-from flask import Flask
+from flask import Flask, request, jsonify, render_template
 from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
@@ -12,7 +12,11 @@ from models import College
 
 @app.route('/')
 def hello_world():
-    return 'Hello World!'
+    try:
+        colleges = College.query.all()
+        return render_template("index.html", colleges=colleges)
+    except Exception as e:
+        return (str(e))
 
 
 if __name__ == '__main__':
