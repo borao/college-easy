@@ -24,32 +24,32 @@
 
     <div class="form-group">
       <label for="app_deadline">Application Deadline Date</label>
-      <input type="text" class="form-control" id="app_deadline" placeholder="MM/DD/YYYY" name="app_deadline">
+      <input type="text" class="form-control" id="app_deadline" placeholder="{% if is_editing %}{{ college.app_deadline }}{% else %}MM/DD/YYYY{% endif %}" name="app_deadline">
     </div>
 
     <div class="form-group">
       <label for="rec_deadline">Recommendation Letter Deadline Date</label>
-      <input type="text" class="form-control" id="rec_deadline" placeholder="MM/DD/YYYY" name="rec_deadline">
+      <input type="text" class="form-control" id="rec_deadline" placeholder="{% if is_editing %}{{ college.rec_deadline }}{% else %}MM/DD/YYYY{% endif %}" name="rec_deadline">
     </div>
 
     <div class="form-group">
       <label for="num_essays">Number of Supplemental Essays</label>
-      <input type="text" class="form-control" id="num_essays" placeholder="Number of Essays" name="num_essays">
+      <input type="text" class="form-control" id="num_essays" placeholder="{% if is_editing %}{{ college.num_essays }}{% else %}Number of Essays{% endif %}" name="num_essays">
     </div>
 
     <div class="form-group">
       <label for="midyear_report">Midyear Report Deadline Date</label>
-      <input type="text" class="form-control" id="midyear_report" placeholder="MM/DD/YYYY" name="midyear_report">
+      <input type="text" class="form-control" id="midyear_report" placeholder="{% if is_editing %}{{ college.midyear_report }}{% else %}MM/DD/YYYY{% endif %}" name="midyear_report">
     </div>
 
     <div class="form-group">
       <label for="acceptance_rate">Acceptance Rate</label>
-      <input type="text" class="form-control" id="acceptance_rate" placeholder="MM/DD/YYYY" name="acceptance_rate">
+      <input type="text" class="form-control" id="acceptance_rate" placeholder="{% if is_editing %}{{ college.acceptance_rate }}{% else %}Enter acceptance rate{% endif %}" name="acceptance_rate">
     </div>
 
     <div class="form-group">
-      <label for="rec_deadline">Application Platform</label>
-      <input type="text" class="form-control" id="platform" placeholder="Enter application portal name" name="platform">
+      <label for="platform">Application Platform</label>
+      <input type="text" class="form-control" id="platform" placeholder="{% if is_editing %}{{ college.platform }}{% else %}Enter application portal name{% endif %}" name="platform">
     </div>
 
     <button type="submit" class="btn btn-primary">Submit</button>
