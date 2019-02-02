@@ -1,5 +1,5 @@
 import os
-from flask import Flask, request, jsonify, render_template
+from flask import Flask, request, redirect, render_template
 from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
@@ -20,7 +20,7 @@ def index():
         return str(e)
 
 
-@app.route('/add_college')
+@app.route('/add_college', methods=['POST'])
 def add_college():
     name = request.args.get('name')
     app_deadline = request.args.get('app_deadline')
@@ -41,7 +41,7 @@ def add_college():
         )
         db.session.add(college)
         db.session.commit()
-        return "College added. college id={}".format(college.id)
+        return redirect('/')
     except Exception as e:
         return str(e)
 
