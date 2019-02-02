@@ -23,13 +23,47 @@
     </thead>
     <tbody>
       <tr>
-        <th scope="row">1</th>
-        <td>Mark</td>
-        <td>Otto</td>
-        <td>@mdo</td>
-        <td>smthA</td>
-        <td>smthB</td>
-        <td>smthC</td>
+        <ul>
+          {% for college in colleges %}
+            <td>{{ college.name }}</td>
+          {% endfor %}
+        </ul>
+
+        <ul>
+          {% for college in colleges %}
+            <td>{{ college.app_deadline }}</td>
+          {% endfor %}
+        </ul>
+
+        <ul>
+          {% for college in colleges %}
+            <td>{{ college.rec_deadline }}</td>
+          {% endfor %}
+        </ul>
+
+        <ul>
+          {% for college in colleges %}
+            <td>{{ college.num_essays }}</td>
+          {% endfor %}
+        </ul>
+
+        <ul>
+          {% for college in colleges %}
+            <td>{{ college.midyear_report }}</td>
+          {% endfor %}
+        </ul>
+
+        <ul>
+          {% for college in colleges %}
+            <td>{{ college.acceptance_rate }}</td>
+          {% endfor %}
+        </ul>
+
+        <ul>
+          {% for college in colleges %}
+            <td>{{ college.platform }}</td>
+          {% endfor %}
+        </ul>
       </tr>
       <tr>
         <th scope="row">2</th>
