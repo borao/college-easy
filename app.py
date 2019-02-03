@@ -51,7 +51,6 @@ def add_college():
 
 @app.route('/edit_college', methods=['GET', 'POST'])
 def edit_college():
-    print(f"name %s", request.args.get('name'))
     college = College.query.filter_by(name=request.args.get('name')).first()
     if request.method == "POST":
         college.name = request.form.get('name')
@@ -66,6 +65,8 @@ def edit_college():
     else:
         try:
             is_editing = True
+            if request.args.get('name') is None:
+                raise ValueError('There is no college specified for editing.')
             return render_template("college.html", college=college, is_editing=is_editing)
         except Exception as e:
             return str(e)
