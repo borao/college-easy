@@ -47,6 +47,8 @@
     {% else %}
 <form action="/edit_college?name={% if college.name is defined %}{{ college.name }}{% endif %}" method="POST">
     {% endif %}
+
+<br />
 <div class="container">
     {% if not is_editing %}
   <h2>Enter college information:</h2>
