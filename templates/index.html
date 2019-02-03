@@ -86,9 +86,9 @@
     Dropdown button
   </button>
   <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-    <a class="dropdown-item" href="#">Action</a>
-    <a class="dropdown-item" href="#">Another action</a>
-    <a class="dropdown-item" href="#">Something else here</a>
+    {% for college in colleges %}
+    <a class="dropdown-item" href="/edit_college?name={{ college.name }}">{{ college.name }}</a>
+    {% endfor %}
   </div>
 </div></td>
 </tr>
