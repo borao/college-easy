@@ -5,6 +5,10 @@
   <title> College Easy! </title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 </head>
 
 <body style="background: linear-gradient(to bottom, #f9f4ea, #f9e3b7); height:100%; background-repeat: no-repeat">
@@ -45,31 +49,53 @@
 </font> </p>
 </div>
 
-<!-- "add college" button -->
-<button style="background: linear-gradient(to bottom, #1CB913 20%, #11760B 100%);
+<table>
+  <tr>
+    <!-- "add college" button -->
+<td><button style="background: linear-gradient(to bottom, #1CB913 20%, #11760B 100%);
                color:#ffffff; border-radius: 8px; height: 35px">
   <font face=georgia>
     <a href="/add_college" role="button" style="color:#ffffff; padding: 20px;">
       Add a New College </a>
-</button>
+</button></td>
 
 <!-- "edit college" button -->
-<button style="background: linear-gradient(to bottom, #F0D53A 20%, #9B8712 100%);
+<td><button style="background: linear-gradient(to bottom, #F0D53A 20%, #9B8712 100%);
               color:#ffffff; border-radius: 8px; height: 35px">
   <font face=georgia>
     <a href="/edit_college" role="button" style="color:#ffffff; padding: 20px;">
       Edit a College
     </a>
-</button>
+</button></td>
 
 <!-- "delete college" button -->
-<button style="background: linear-gradient(to bottom, #E53232 20%, #8C1111 100%);
+<!--<div class="container">
+<div class="dropdown">
+<button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" style="background: linear-gradient(to bottom, #E53232 20%, #8C1111 100%);
               color:#ffffff; border-radius: 8px; height: 35px">
-  <font face=georgia>
-    <a href="/edit_college" role="button" style="color:#ffffff; padding: 20px;">
+  <font face=georgia>Delete a college</font>
+  <span class="caret"></span></button>
+    <ul class="dropdown-menu">
+      <li><a href="#">HTML</a></li>
+    </ul>
+  </div>
+</div>-->
+<td><div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" style="background: linear-gradient(to bottom, #E53232 20%, #8C1111 100%);
+                color:#ffffff; border-radius: 8px; height: 35px" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Dropdown button
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <a class="dropdown-item" href="#">Action</a>
+    <a class="dropdown-item" href="#">Another action</a>
+    <a class="dropdown-item" href="#">Something else here</a>
+  </div>
+</div></td>
+</tr>
+</table>
+<!--    <a href="/edit_college" role="button" style="color:#ffffff; padding: 20px;">
       Delete a College
-    </a>
-</button>
+    </a> -->
 
 <table class="table table-striped table-dark">
   <thead>
