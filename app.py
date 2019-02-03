@@ -40,8 +40,12 @@ def add_college():
                 acceptance_rate=acceptance_rate,
                 platform=platform,
             )
-            db.session.add(college)
-            db.session.commit()
+
+            if request.form.get('name') == "":
+                raise ValueError('There is no name specified for the college. Please go back and re-enter a name.')
+            else:
+                db.session.add(college)
+                db.session.commit()
             return redirect('/')
         except Exception as e:
             return str(e)
@@ -86,6 +90,7 @@ def delete_college():
     db.session.delete(college_to_delete)
     db.session.commit()
     return redirect('/')
+
 
 if __name__ == '__main__':
     app.run()
