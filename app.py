@@ -63,7 +63,7 @@ def edit_college():
         college.name = request.form.get('name')
         college.app_deadline = request.form.get('app_deadline')
         college.rec_deadline = request.form.get('rec_deadline')
-        college.num_essays = request.form.get('num_essay')
+        college.num_essays = request.form.get('num_essays')
         college.midyear_report = request.form.get('midyear_report')
         college.acceptance_rate = request.form.get('acceptance_rate')
         college.platform = request.form.get('platform')
