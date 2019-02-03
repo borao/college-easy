@@ -45,49 +45,58 @@
     {% if not is_editing %}
 <form action="/add_college" method="POST">
     {% else %}
-<form action="/edit_college?name={% if college.name is defined %}{{ college.name }}{% endif %}" method="POST">
+<form action="/edit_college?name={{ college.name }}" method="POST">
     {% endif %}
-
-<br />
 <div class="container">
     {% if not is_editing %}
-  <h2>Enter college information:</h2>
+  <h2>Enter college information</h2>
     {% else %}
-  <h2>Edit college information:</h2>
+  <h2>Edit college information</h2>
     {% endif %}
     <div class="form-group">
       <label for="name">College Name:</label>
-      <input type="text" class="form-control" id="name" value="{% if college is defined %}{{ college.name }}{% endif %}" name="name">
+      <input type="text" class="form-control" id="name" value="{% if college.name is not none %}{{ college.name }}{% endif %}" name="name">
     </div>
 
     <div class="form-group">
-      <label for="app_deadline">Application Deadline Date:</label>
-      <input type="text" class="form-control" id="app_deadline" value="{% if college is defined %}{{ college.app_deadline }}{% endif %}" name="app_deadline">
+      <label for="app_deadline">Application Deadline Date</label>
+      <input type="text" class="form-control" id="app_deadline" value="{% if college.app_deadline is not none %}{{ college.app_deadline }}{% endif %}" name="app_deadline">
     </div>
 
     <div class="form-group">
-      <label for="rec_deadline">Recommendation Letter Deadline Date:</label>
-      <input type="text" class="form-control" id="rec_deadline" value="{% if college is defined %}{{ college.rec_deadline }}{% endif %}" name="rec_deadline">
+      <label for="rec_deadline">Recommendation Letter Deadline Date</label>
+      <input type="text" class="form-control" id="rec_deadline" value="{% if college.rec_deadline is not none %}{{ college.rec_deadline }}{% endif %}" name="rec_deadline">
     </div>
 
     <div class="form-group">
-      <label for="num_essays">Number of Supplemental Essays:</label>
-      <input type="text" class="form-control" id="num_essays" value="{% if college is defined %}{{ college.num_essays }}{% endif %}" name="num_essays">
+      <label for="num_essays">Number of Supplemental Essays</label>
+      <input type="text" class="form-control" id="num_essays" value="{% if college.num_essays is not none %}{{ college.num_essays }}{% endif %}" name="num_essays">
     </div>
 
     <div class="form-group">
-      <label for="midyear_report">Midyear Report Deadline Date:</label>
-      <input type="text" class="form-control" id="midyear_report" value="{% if college is defined %}{{ college.midyear_report }}{% endif %}" name="midyear_report">
+      <label for="midyear_report">Midyear Report Deadline Date</label>
+      <input type="text" class="form-control" id="midyear_report" value="{% if college.midyear_report is not none %}{{ college.midyear_report }}{% endif %}" name="midyear_report">
     </div>
 
     <div class="form-group">
-      <label for="acceptance_rate">Acceptance Rate:</label>
-      <input type="text" class="form-control" id="acceptance_rate" value="{% if college is defined %}{{ college.acceptance_rate }}{% endif %}" name="acceptance_rate">
+      <label for="acceptance_rate">Acceptance Rate</label>
+      <input type="text" class="form-control" id="acceptance_rate" value="{% if college.acceptance_rate is not none %}{{ college.acceptance_rate }}{% endif %}" name="acceptance_rate">
     </div>
 
     <div class="form-group">
-      <label for="platform">Application Platform:</label>
-      <input type="text" class="form-control" id="platform" value="{% if college is defined %}{{ college.platform }}{% endif %}" name="platform">
+      <label for="platform">Application Platform</label>
+      <select class="form-control">
+        <option> {% if college.platform is not none %}{{ college.platform }} </option>
+          {% else %}
+          <option> Common App </option>
+          <option> Coalition App </option>
+          <option> ApplyTexas </option>
+          <option> UC App </option>
+          <option> Other </option>
+
+
+          {% endif %}
+      <!--<input type="text" class="form-control" id="platform" value="{% if college.platform is not none %}{{ college.platform }}{% endif %}" name="platform">-->
     </div>
 
     <button type="submit" class="btn btn-primary">Submit</button>
