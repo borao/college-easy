@@ -52,6 +52,7 @@ def add_college():
 @app.route('/edit_college', methods=['GET', 'POST'])
 def edit_college():
     college = College.query.filter_by(name=request.args.get('name')).first()
+    # Run this once the user makes some edits and submits the form with a post request
     if request.method == "POST":
         college.name = request.form.get('name')
         college.app_deadline = request.form.get('app_deadline')
@@ -62,6 +63,7 @@ def edit_college():
         college.platform = request.form.get('platform')
         db.session.commit()
         return redirect('/')
+    # Run this if the user is visiting the edit page for the first time (no edits yet)
     else:
         try:
             is_editing = True
@@ -71,6 +73,12 @@ def edit_college():
         except Exception as e:
             return str(e)
 
+
+@app.route('/delete_college', methods=['GET', 'POST'])
+def delete_college():
+    college_to_delete = College.query.filter_by(name=request.args.get('name')).first()
+    db.session.delete(college_to_delete)
+    return redirect('/')
 
 if __name__ == '__main__':
     app.run()
