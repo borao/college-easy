@@ -117,6 +117,9 @@
         </td>
     </tr>
 </table>
+{% if get_flashed_messages() %}
+<h4 style="padding-left: 10px; color: red;">{% for message in get_flashed_messages() %}Error: {{ message }}{% endfor %}</h4>
+{% endif %}
 <!--    <a href="/edit_college" role="button" style="color:#ffffff; padding: 20px;">
       Delete a College
     </a> -->

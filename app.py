@@ -1,5 +1,5 @@
 import os
-from flask import Flask, request, redirect, render_template
+from flask import Flask, request, redirect, render_template, flash
 from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
@@ -41,11 +41,15 @@ def add_college():
                 platform=platform,
             )
 
-            if request.form.get('name') == "":
-                raise ValueError('There is no name specified for the college. Please go back and re-enter a name.')
-            else:
-                db.session.add(college)
-                db.session.commit()
+            try:
+                if request.form.get('name') == "":
+                    raise ValueError('There is no name specified for the college. Please try again with a name.')
+                else:
+                    db.session.add(college)
+                    db.session.commit()
+            except ValueError as v:
+                flash(str(v))
+                return redirect('/')
             return redirect('/')
         except Exception as e:
             return str(e)
@@ -77,8 +81,12 @@ def edit_college():
     else:
         try:
             is_editing = True
-            if request.args.get('name') is None:
-                raise ValueError('There is no college specified for editing.')
+            try:
+                if request.args.get('name') is None:
+                    raise ValueError('There is no college specified for editing.')
+            except ValueError as v:
+                flash(str(v))
+                return redirect('/')
             return render_template("college.html", college=college, is_editing=is_editing)
         except Exception as e:
             return str(e)
