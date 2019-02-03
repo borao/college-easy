@@ -86,7 +86,7 @@
     <div class="form-group">
       <label for="platform" id="platform">Application Platform</label>
       <select class="form-control" id="platform" name="platform">
-        <option> {% if college is defined %}{{ college.platform }} </option>
+        <option> {% if college is defined %}{{ college.platform }}{% endif %}</option>
           <option value="Common App"> Common App </option>
           <option value="Coalition App"> Coalition App </option>
           <option value="ApplyTexas"> ApplyTexas </option>
@@ -95,7 +95,6 @@
             </select>
 
     </div>
-          {% endif %}
 
     <button type="submit" class="btn btn-primary">Submit</button>
 
