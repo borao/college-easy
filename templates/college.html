@@ -55,37 +55,37 @@
     {% endif %}
     <div class="form-group">
       <label for="name">College Name:</label>
-      <input type="text" class="form-control" id="name" value="{% if is_editing %}{{ college.name }}{% else %}Enter college name{% endif %}" name="name">
+      <input type="text" class="form-control" id="name" value="{% if college.name is not none %}{{ college.name }}{% endif %}" name="name">
     </div>
 
     <div class="form-group">
       <label for="app_deadline">Application Deadline Date</label>
-      <input type="text" class="form-control" id="app_deadline" value="{% if is_editing %}{{ college.app_deadline }}{% else %}MM/DD/YYYY{% endif %}" name="app_deadline">
+      <input type="text" class="form-control" id="app_deadline" value="{% if college.app_deadline is not none %}{{ college.app_deadline }}{% endif %}" name="app_deadline">
     </div>
 
     <div class="form-group">
       <label for="rec_deadline">Recommendation Letter Deadline Date</label>
-      <input type="text" class="form-control" id="rec_deadline" value="{% if is_editing %}{{ college.rec_deadline }}{% else %}MM/DD/YYYY{% endif %}" name="rec_deadline">
+      <input type="text" class="form-control" id="rec_deadline" value="{% if college.rec_deadline is not none %}{{ college.rec_deadline }}{% endif %}" name="rec_deadline">
     </div>
 
     <div class="form-group">
       <label for="num_essays">Number of Supplemental Essays</label>
-      <input type="text" class="form-control" id="num_essays" value="{% if is_editing %}{{ college.num_essays }}{% else %}Number of Essays{% endif %}" name="num_essays">
+      <input type="text" class="form-control" id="num_essays" value="{% if college.num_essays is not none %}{{ college.num_essays }}{% endif %}" name="num_essays">
     </div>
 
     <div class="form-group">
       <label for="midyear_report">Midyear Report Deadline Date</label>
-      <input type="text" class="form-control" id="midyear_report" value="{% if is_editing %}{{ college.midyear_report }}{% else %}MM/DD/YYYY{% endif %}" name="midyear_report">
+      <input type="text" class="form-control" id="midyear_report" value="{% if college.midyear_report is not none %}{{ college.midyear_report }}{% endif %}" name="midyear_report">
     </div>
 
     <div class="form-group">
       <label for="acceptance_rate">Acceptance Rate</label>
-      <input type="text" class="form-control" id="acceptance_rate" value="{% if is_editing %}{{ college.acceptance_rate }}{% else %}Enter acceptance rate{% endif %}" name="acceptance_rate">
+      <input type="text" class="form-control" id="acceptance_rate" value="{% if college.acceptance_rate is not none %}{{ college.acceptance_rate }}{% endif %}" name="acceptance_rate">
     </div>
 
     <div class="form-group">
       <label for="platform">Application Platform</label>
-      <input type="text" class="form-control" id="platform" value="{% if is_editing %}{{ college.platform }}{% else %}Enter application portal name{% endif %}" name="platform">
+      <input type="text" class="form-control" id="platform" value="{% if college.platform is not none %}{{ college.platform }}{% endif %}" name="platform">
     </div>
 
     <button type="submit" class="btn btn-primary">Submit</button>
