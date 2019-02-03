@@ -51,7 +51,8 @@ def add_college():
 
 @app.route('/edit_college', methods=['GET', 'POST'])
 def edit_college():
-    college = College.query.filter_by(name=request.args.get('name')).one()
+    print(f"name %s", request.args.get('name'))
+    college = College.query.filter_by(name=request.args.get('name')).first()
     if request.method == "POST":
         college.name = request.form.get('name')
         college.app_deadline = request.form.get('app_deadline')
@@ -60,7 +61,7 @@ def edit_college():
         college.midyear_report = request.form.get('midyear_report')
         college.acceptance_rate = request.form.get('acceptance_rate')
         college.platform = request.form.get('platform')
-        College.commit()
+        db.session.commit()
         return redirect('/')
     else:
         try:

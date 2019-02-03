@@ -42,7 +42,11 @@
 </div>
 
 <body>
+    {% if not is_editing %}
 <form action="/add_college" method="POST">
+    {% else %}
+<form action="/edit_college?name={{ college.name }}" method="POST">
+    {% endif %}
 <div class="container">
     {% if not is_editing %}
   <h2>Enter college information</h2>
