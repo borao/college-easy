@@ -54,7 +54,7 @@
 </button>
 
 <!-- "edit college" button -->
-<button style="background: linear-gradient(to bottom, #E53232 20%, #8C1111 100%);
+<button style="background: linear-gradient(to bottom, #F0D53A 20%, #9B8712 100%);
               color:#ffffff; border-radius: 8px; height: 35px">
   <font face=georgia>
     <a href="/edit_college" role="button" style="color:#ffffff; padding: 20px;">
@@ -71,48 +71,42 @@
     </a>
 </button>
 
-  <table class="table table-striped table-dark">
-    <thead>
-      <tr>
-        <th scope="col">College Name</th>
-        <th scope="col">Application Deadline</th>
-        <th scope="col">Rec Deadline</th>
-        <th scope="col">Number of Essays</th>
-        <th scope="col">Mid-Year Report</th>
-        <th scope="col">Acceptance Rate</th>
-        <th scope="col">Platform</th>
-      </tr>
-    </thead>
-    <tbody>
-    {% for college in colleges %}
-      <tr>
+<table class="table table-striped table-dark">
+  <thead>
+    <tr>
+      <th scope="col">College Name</th>
+      <th scope="col">Application Deadline</th>
+      <th scope="col">Rec Deadline</th>
+      <th scope="col">Number of Essays</th>
+      <th scope="col">Mid-Year Report</th>
+      <th scope="col">Acceptance Rate</th>
+      <th scope="col">Platform</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for college in colleges %}
+    <tr>
+      <ul>
+          <td>{{ college.name }}</td>
+      </ul>
         <ul>
-            <td>{{ college.name }}</td>
-        </ul>
-
+          <td>{{ college.app_deadline }}</td>
+      </ul>
         <ul>
-            <td>{{ college.app_deadline }}</td>
-        </ul>
-
+          <td>{{ college.rec_deadline }}</td>
+      </ul>
         <ul>
-            <td>{{ college.rec_deadline }}</td>
-        </ul>
-
+          <td>{{ college.num_essays }}</td>
+      </ul>
         <ul>
-            <td>{{ college.num_essays }}</td>
-        </ul>
-
+          <td>{{ college.midyear_report }}</td>
+      </ul>
         <ul>
-            <td>{{ college.midyear_report }}</td>
-        </ul>
-
+          <td>{{ college.acceptance_rate }}</td>
+      </ul>
         <ul>
-            <td>{{ college.acceptance_rate }}</td>
-        </ul>
-
-        <ul>
-            <td>{{ college.platform }}</td>
-        </ul>
+          <td>{{ college.platform }}</td>
+      </ul>
       </tr>
     {% endfor %}
 
