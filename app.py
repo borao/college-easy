@@ -51,6 +51,12 @@ def add_college():
 
 @app.route('/edit_college', methods=['GET', 'POST'])
 def edit_college():
+    """
+    Workflow: A user selects a college from the 'edit college' dropdown and encounters the else case of this
+    method because there is no post request yet. Then, once they edit the information, they submit the form
+    with a post request which enters the if condition of the function.
+    :return: if the user successfully edits, the '/' url
+    """
     college = College.query.filter_by(name=request.args.get('name')).first()
     # Run this once the user makes some edits and submits the form with a post request
     if request.method == "POST":
@@ -78,6 +84,7 @@ def edit_college():
 def delete_college():
     college_to_delete = College.query.filter_by(name=request.args.get('name')).first()
     db.session.delete(college_to_delete)
+    db.session.commit()
     return redirect('/')
 
 if __name__ == '__main__':
