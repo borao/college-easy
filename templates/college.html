@@ -20,7 +20,7 @@
         height: 100%;}
     </style>
 
-<div>
+<div><!--
   <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
     <ul class="navbar-nav">
       <li class="nav-item active">
@@ -32,7 +32,7 @@
         <a class="nav-link" href="#">Add</a>
       </li>
     </ul>
-  </nav>
+  </nav>-->
 
 <div style="background: linear-gradient(to bottom, #E53232 20%, #8C1111 100%); height:100px;" >
   <center>
@@ -47,6 +47,7 @@
     {% else %}
 <form action="/edit_college?name={{ college.name }}" method="POST">
     {% endif %}
+  <br />
 <div class="container">
     {% if not is_editing %}
   <h2>Enter college information</h2>
