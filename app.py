@@ -40,19 +40,17 @@ def add_college():
                 acceptance_rate=acceptance_rate,
                 platform=platform,
             )
-
-            try:
-                if request.form.get('name') == "":
-                    raise ValueError('There is no name specified for the college. Please try again with a name.')
-                else:
-                    db.session.add(college)
-                    db.session.commit()
-            except ValueError as v:
-                flash(str(v))
-                return redirect('/')
+            if request.form.get('name') == "":
+                raise ValueError('There is no name specified for the college. Please try again with a name.')
+            else:
+                db.session.add(college)
+                db.session.commit()
+        except ValueError as v:
+            flash(str(v))
             return redirect('/')
         except Exception as e:
             return str(e)
+        return redirect('/')
     else:
         return render_template("college.html")
 
