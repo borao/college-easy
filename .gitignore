@@ -157,6 +157,9 @@ dmypy.json
 # .idea/*.iml
 # .idea/modules
 
+# VS Code
+.vscode
+
 # CMake
 cmake-build-*/
 
